@@ -1,0 +1,143 @@
+:root {
+  --g12: #0b0c12;
+  --g11: #242833;
+  --g10: #363b47;
+  --g9: #474d59;
+  --g8: #636973;
+  --g7: #7e838c;
+  --g6: #989ea6;
+  --g5: #b2b8bf;
+  --g4: #c0c5cc;
+  --g3: #ced3d9;
+  --g2: #e6eaf0;
+  --g1: #f5f7fa;
+}
+body,
+p,
+h1,
+h2,
+figure {
+  margin: 0px;
+  padding: 0px;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 100svh;
+  width: 100%;
+  background: url(/img/bg.jpg) no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+.header__h {
+  font-family: "Kanit", monospace;
+  color: var(--g1);
+  font-size: clamp(3rem, 7vw + 0.9375rem, 4rem);
+  max-width: 20ch;
+  line-height: 1;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+}
+.header__subh {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 1.7vw + 0.24rem, 1rem);
+  color: var(--g6);
+  line-height: 1;
+}
+.body {
+  color: var(--g1);
+  background-color: var(--g12);
+  padding-bottom: 32px;
+}
+.content__caption {
+  text-align: center;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: var(--g6);
+  font-size: 1rem;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.content__p {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  text-indent: 5ch;
+  line-height: 1.5;
+}
+.content__p + .content__p {
+  margin-top: 0.5rem;
+}
+figure {
+  margin: 0.5rem 0;
+}
+.content__h {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 1.25rem 0 0.5rem 0;
+}
+.content__img {
+  height: 240px;
+}
+.content__img--1 {
+  object-fit: cover;
+  width: 100%;
+}
+.content__img--3,
+.content__img--2 {
+  width: 100%;
+  object-fit: cover;
+}
+.float--1 {
+  float: right;
+  width: 50%;
+  margin-left: 1.25rem;
+}
+.float--2 {
+  float: left;
+  width: 50%;
+  margin-right: 1.25rem;
+}
+@media (max-width: 68.75rem) {
+  .container {
+    max-width: 700px;
+  }
+}
+@media (max-width: 50rem) {
+  .container {
+    max-width: 500px;
+  }
+  .content__p {
+    font-size: 1.125rem;
+  }
+  .content__h {
+    font-size: 1.75rem;
+  }
+  .float--1,
+  .float--2 {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (max-width: 34.375rem) {
+  .container {
+    max-width: 300px;
+  }
+  .content__img--3,
+  .content__img--2 {
+    object-fit: contain;
+  }
+}
