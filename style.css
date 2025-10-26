@@ -12,6 +12,15 @@
   --g2: #e6eaf0;
   --g1: #f5f7fa;
 }
+.light-mode {
+  --g12: #f5f7fa;
+  --g11: #e6eaf0;
+  --g10: #ced3d9;
+  --g9: #c0c5cc;
+  --g6: #7e838c;
+  --g2: #242833;
+  --g1: #0b0c12;
+}
 body,
 p,
 h1,
@@ -43,7 +52,7 @@ img {
 }
 .header__h {
   font-family: "Kanit", monospace;
-  color: var(--g1);
+  color: #f5f7fa;
   font-size: clamp(3rem, 7vw + 0.9375rem, 4rem);
   max-width: 20ch;
   line-height: 1;
@@ -54,11 +63,11 @@ img {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: clamp(0.75rem, 1.7vw + 0.24rem, 1rem);
-  color: var(--g6);
+  color: #989ea6;
   line-height: 1;
 }
 .body {
-  color: var(--g1);
+  color: var(--g2);
   background-color: var(--g12);
   padding-bottom: 32px;
 }
@@ -110,6 +119,72 @@ figure {
   width: 50%;
   margin-right: 1.25rem;
 }
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--g11);
+  opacity: 75%;
+}
+.btn:hover {
+  border: 2px solid var(--g10);
+}
+.btn:active {
+  border: 2px solid var(--g9);
+}
+.dark {
+  display: none;
+  filter: invert(14%) sepia(6%) saturate(2152%) hue-rotate(187deg)
+    brightness(96%) contrast(94%);
+  padding: 8px;
+}
+.light {
+  display: block;
+  filter: invert(14%) sepia(6%) saturate(2152%) hue-rotate(187deg)
+    brightness(96%) contrast(94%);
+  padding: 8px;
+}
+.dark:hover,
+.light:hover {
+  filter: invert(22%) sepia(7%) saturate(1201%) hue-rotate(185deg)
+    brightness(95%) contrast(92%);
+}
+.dark:active,
+.light:active {
+  filter: invert(25%) sepia(24%) saturate(368%) hue-rotate(182deg)
+    brightness(95%) contrast(81%);
+}
+.light-mode {
+  .dark {
+    display: block;
+  }
+  .light {
+    display: none;
+  }
+  .dark,
+  light {
+    filter: invert(94%) sepia(11%) saturate(438%) hue-rotate(189deg)
+      brightness(102%) contrast(88%);
+  }
+  .dark:hover,
+  .light:hover {
+    filter: invert(93%) sepia(7%) saturate(188%) hue-rotate(172deg)
+      brightness(92%) contrast(90%);
+  }
+  .dark:active,
+  .light:active {
+    filter: invert(97%) sepia(92%) saturate(328%) hue-rotate(175deg)
+      brightness(83%) contrast(90%);
+  }
+}
 @media (max-width: 68.75rem) {
   .container {
     max-width: 700px;
@@ -130,6 +205,7 @@ figure {
     float: none;
     width: 100%;
     margin: 0;
+    margin: 0.5rem 0;
   }
 }
 @media (max-width: 34.375rem) {
@@ -139,5 +215,6 @@ figure {
   .content__img--3,
   .content__img--2 {
     object-fit: contain;
+    height: 100%;
   }
 }
